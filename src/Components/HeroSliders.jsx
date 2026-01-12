@@ -13,7 +13,7 @@ const HeroSliders = () => {
     const [slideData, setData] = useState([])
 
     useEffect(() => {
-        const filteredData = Productdata.filter(products => Object.keys(products).includes("heroImage")
+        const filteredData = Productdata.filter(prod => Object.keys(prod).includes("heroImage")
         )
         setData(filteredData)
     }, [])
@@ -26,7 +26,9 @@ const HeroSliders = () => {
                     <div className="slider">
                         <Swiper
                             modules={[Autoplay, Pagination, Navigation]}
+                            paceBetween={20}
                             slidesPerView={1}
+                            slidesPerGroup={1}
                             loop={true}
                             autoplay={{ delay: 2000 }}
                             pagination={{ clickable: true }}
@@ -39,7 +41,7 @@ const HeroSliders = () => {
                                         <div className="cards">
                                             <div className="leftData">
                                                 <h3>{user.title}</h3>
-                                                <h2>{user.tagline}</h2>
+                                                <h1>{user.tagline}</h1>
                                                 <div className="value">
                                                     <div className="new"><p>${user.finalPrice}</p></div>
                                                     <div className="old"><p>${user.originalPrice}</p></div>
