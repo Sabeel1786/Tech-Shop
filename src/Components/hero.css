@@ -1,0 +1,45 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.slider {
+    background-color: #141414;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.cards {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    z-index: 10;
+    color: #A5ABBE;
+    min-height: 100vh;
+    
+}
+
+.backtext h1 {
+    text-align: center;
+    position: absolute;
+    z-index: 0;
+    opacity: 30%;
+    font-size: 300px;
+    left: 10%;
+}
+
+/* Normal dots */
+.swiper-pagination-bullet {
+    background-color: red;
+    opacity: 0.4;
+}
+
+/* Active dot */
+.swiper-pagination-bullet-active {
+    background-color: red;
+    opacity: 1;
+}
+

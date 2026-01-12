@@ -1,0 +1,63 @@
+nav {
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+
+.navcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 10px;
+}
+
+.navcontainer .rightComp {
+    display: flex;
+    gap: 40px;
+}
+
+.rightComp .icon {
+    margin: 0px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+
+.icon:hover {
+    color: #ED1D24;
+}
+
+.leftComp h1:hover {
+    color: #ED1D24;
+    cursor: pointer;
+}
+
+.leftComp h1 {
+    margin: 10px 20px;
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    margin: 0px 40px;
+}
+
+.iconWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.rightComp .info{
+    position: absolute;
+    top: 35px;
+    left: -40px;
+    background-color: #222222;
+    border: 2px solid white;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 15px;
+}
