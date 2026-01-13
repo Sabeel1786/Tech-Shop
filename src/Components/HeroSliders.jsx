@@ -26,7 +26,6 @@ const HeroSliders = () => {
                     <div className="slider">
                         <Swiper
                             modules={[Autoplay, Pagination, Navigation]}
-                            spaceBetween={20}
                             slidesPerView={1}
                             slidesPerGroup={1}
                             loop={true}
@@ -43,8 +42,8 @@ const HeroSliders = () => {
                                                 <h3>{user.title}</h3>
                                                 <h1>{user.tagline}</h1>
                                                 <div className="value">
-                                                    <div className="new"><p>${user.finalPrice}</p></div>
-                                                    <div className="old"><p>${user.originalPrice}</p></div>
+                                                    <div className="new"><p>₹{user.finalPrice}</p></div>
+                                                    <div className="old"><p>₹{user.originalPrice}</p></div>
                                                 </div>
                                                 <button className="btn btn-danger">Shop Now</button>
                                             </div>
