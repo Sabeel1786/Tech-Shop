@@ -26,7 +26,7 @@ const HeroSliders = () => {
                     <div className="slider">
                         <Swiper
                             modules={[Autoplay, Pagination, Navigation]}
-                            paceBetween={20}
+                            spaceBetween={20}
                             slidesPerView={1}
                             slidesPerGroup={1}
                             loop={true}

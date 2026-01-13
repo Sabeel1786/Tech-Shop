@@ -61,3 +61,78 @@ nav {
     display: inline-block;
     padding: 5px 15px;
 }
+
+/* ========================= */
+/* Medium Devices (Tablets) */
+/* ========================= */
+@media (max-width: 992px) {
+    .navcontainer {
+        margin: 0 15px;
+    }
+
+    .navcontainer .rightComp {
+        gap: 25px;
+    }
+
+    .iconWrapper {
+        margin: 0 15px;
+    }
+
+    .rightComp .icon {
+        font-size: 20px;
+    }
+
+    .rightComp .info {
+        top: 32px;
+        left: -30px;
+        font-size: 14px;
+        padding: 4px 12px;
+    }
+
+    .leftComp h1 {
+        font-size: 22px;
+        margin: 10px;
+    }
+}
+
+/* ========================= */
+/* Small Devices (Mobiles)  */
+/* ========================= */
+@media (max-width: 576px) {
+    nav {
+        padding: 10px 0;
+    }
+
+    .navcontainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .leftComp h1 {
+        font-size: 20px;
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .navcontainer .rightComp {
+        gap: 20px;
+    }
+
+    .iconWrapper {
+        margin: 0;
+    }
+
+    .rightComp .icon {
+        font-size: 18px;
+    }
+
+    .rightComp .info {
+        top: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 13px;
+        padding: 4px 10px;
+        white-space: nowrap;
+    }
+}
