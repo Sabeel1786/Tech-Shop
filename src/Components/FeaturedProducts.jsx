@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import featuredProd from "../assets/data/productsData";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Navigation, Autoplay, Pagination, EffectCoverflow } from 'swiper/modules'
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -13,50 +13,65 @@ const FeaturedProducts = () => {
     const [featuredData, setFeaturedData] = useState([])
 
     useEffect(() => {
-        const filtered = featuredProd.filter(prod => prod.tag === "featured-product")
+        const filtered = featuredProd.filter(prod => Object.keys(prod).includes("tag"))
         console.log(filtered);
-        
         setFeaturedData(filtered)
         console.log(featuredData);
-        
+
     }, [])
     return (
         <>
-            {  
-                featuredData.length > 0 ? (
-                    <div className="Fsliders">
-                        <Swiper
-                            modules={[Autoplay, Pagination, Navigation]}
-                            spaceBetween={20}
-                            slidesPerView={1}
-                            loop={true}
-                            autoplay={{ delay: 2000 }}
-                            pagination={{ clickable: true }}
-                            navigation
-                        >
-                            {
-                                featuredData.map((user, i) => (
-                                    < SwiperSlide key={i}>
-                                        <div className="Fcards">
-                                            <h1>Featured Products</h1>
-                                            <h3>{user.title}</h3>
-                                            <img src={user.images[0]} alt={user.title} />
-                                            <div className="price">
-                                                <div className="new">₹{user.finalPrice}</div>
-                                                <div className="old">₹{user.originalPrice}</div>
+            <div className="main">
+                <h1>Featured Products</h1>
+                {
+                    featuredData.length > 0 ? (
+                        <div className="Fsliders">
+                            <Swiper
+                                centeredSlides={true}
+                                slidesPerView={5}
+                                loop={true}
+                                spaceBetween={100}
+                                autoplay={{ delay: 2000, disableOnInteraction: false }}
+                                navigation
+                                breakpoints={{
+                                    0: {            // from 0px up
+                                        slidesPerView: 2,
+                                        centeredSlides: true,
+                                    },
+                                    768: {          // from 768px up (tablet)
+                                        slidesPerView: 3,
+                                    },
+                                    1024: {         // from 1024px up (desktop)
+                                        slidesPerView: 5,
+                                    },
+                                }}
+
+                                pagination={{ clickable: true }}
+                                modules={[Navigation, Pagination, Autoplay]}
+                            >
+
+                                {
+                                    featuredData.map((user, i) => (
+                                        < SwiperSlide key={i}>
+                                            <div className="Fcards">
+                                                <h3>{user.title}</h3>
+                                                <img className="Fimage" src={user.images[0]} alt={user.title} />
+                                                <div className="price">
+                                                    <div className="new">₹{user.finalPrice}</div>
+                                                    <div className="old">₹{user.originalPrice}</div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </SwiperSlide>
+                                        </SwiperSlide>
 
-                                ))
+                                    ))
 
-                            }
+                                }
 
 
-                        </Swiper>
-                    </div >) : (<h1>Loading...</h1>)
-            }
-
+                            </Swiper>
+                        </div >) : (<h1>Loading...</h1>)
+                }
+            </div>
         </>
     )
 }
