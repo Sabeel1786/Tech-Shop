@@ -40,7 +40,7 @@
     font-weight: 600;
 }
  .cards .leftData{
-    margin:20px;
+    margin-right:80px;
  }
  .cards .leftData .value{
     display: flex;
