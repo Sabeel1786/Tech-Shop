@@ -14,9 +14,7 @@ const FeaturedProducts = () => {
 
     useEffect(() => {
         const filtered = featuredProd.filter(prod => Object.keys(prod).includes("tag"))
-        console.log(filtered);
         setFeaturedData(filtered)
-        console.log(featuredData);
 
     }, [])
     return (
