@@ -1,50 +1,109 @@
 import React, { useEffect, useState } from "react";
 import productsData from "../assets/data/productsData";
+import servicesData from "../assets/data/servicesData";
+import { FaStar } from "react-icons/fa";
+import "./topProducts.css"
+import { GoArrowRight } from "react-icons/go";
 
 const TopProducts = () => {
     const [topData, setTopdata] = useState([])
+    const [active, setActive] = useState("All");
+
 
     useEffect(() => {
         setTopdata(productsData)
     }, [])
 
+
     const filteredData = (prod) => {
+        setActive(prod);
+
         if (prod !== "All") {
-            const data = productsData.filter(item => item.category === prod)
-            setTopdata(data)
+            const data = productsData.filter(item => item.category === prod);
+            setTopdata(data);
         } else {
-            setTopdata(productsData)
+            setTopdata(productsData);
         }
-    }
+    };
+
     return (
         <div>
-            <div className="container">
+            <div className="Topcontainer">
                 <div className="Toptitle">
                     <h1>Top Products</h1>
                 </div>
-                {
-                    ["All", "Headphones", "Earbuds", "Earphones", "Neckbands"].map((prod, i) => (
+
+                <div className="btn-filter">
+                    {["All", "Headphones", "Earbuds", "Earphones", "Neckbands"].map((prod, i) => (
                         <div className="filterClick" key={i}>
-                            <button onClick={() => filteredData(prod)}>{prod}</button>
+                            <button
+                                className={active === prod ? "active" : ""}
+                                onClick={() => filteredData(prod)}
+                            >
+                                {prod}
+                            </button>
                         </div>
-                    ))
-                }
-                {
-                    topData.length > 0 ? (topData.map((Tdata, index) => (
-                        <div className="TopCards" key={index}>
-                            <div className="Tcards" >
+                    ))}
+                </div>
+
+                <div className="Topmain">
+                    {
+                        topData.length > 0 ? (topData.slice(0, 11).map((Tdata) => (
+
+                            <div className="Tcards" key={Tdata.id}>
                                 <img src={Tdata.images[0]} alt={Tdata.title} />
                                 <div className="Tcont">
-                                   
+                                    <div className="Rating">
+                                        {
+                                            [...Array(Tdata.rateCount)].map((_, i) => (
+                                                <FaStar key={i} color="red" />
+                                            ))
+                                        }
+                                    </div>
+                                    <h1>{Tdata.title}</h1>
+                                    <h3>{Tdata.info}</h3>
+                                    <hr />
+                                    <div className="price">
+                                        <div className="new">₹{Tdata.finalPrice}</div>
+                                        <div className="old">₹{Tdata.originalPrice}</div>
+                                    </div>
+                                    <button className="btn btn-danger">Add to cart</button>
+
                                 </div>
 
                             </div>
-                        </div>
-                    ))
 
-                    ) : (<h1>Loading...</h1>)
-                }
+                        ))
+
+                        ).concat(<div className="browse" key="browse">
+                            <h2>Browse All Products
+                                <GoArrowRight className="arrow" /></h2>
+                        </div>) : (<h1>Loading...</h1>)
+                    }
+                </div>
+
             </div>
+            <div className="advantagesBox">
+                <h1 className="AdTitle">Our Advantages</h1>
+
+                <div className="servicesWrapper">
+                    {servicesData.map((data) => {
+                        const Icon = data.icon;
+                        return (
+                            <div className="services" key={data.id}>
+                                <div className="ico">
+                                    <Icon />
+                                </div>
+                                <div className="SerCont">
+                                    <h2>{data.title}</h2>
+                                    <h3>{data.info}</h3>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+
         </div>
     )
 }

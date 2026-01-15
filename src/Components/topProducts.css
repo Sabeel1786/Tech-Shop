@@ -1,0 +1,140 @@
+.Tcards hr {
+    border: none;
+    height: 1px;
+    background: gainsboro;
+}
+
+.Topmain {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow-x: hidden;
+    gap: 20px;
+
+}
+
+.Tcards {
+    width: 100%;
+    border: 2px solid rgb(98, 94, 94);
+    border-radius: 2px;
+}
+
+.Tcards .Tcont {
+    margin: 30px;
+}
+
+.Tcont .Rating {
+    margin: 20px 10px;
+}
+
+.Tcont button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 15px;
+    font-size: larger;
+    background-color: red;
+}
+
+.Tcont h1 {
+    color: rgb(186, 182, 182);
+}
+
+.Tcont h3 {
+    color: rgb(101, 98, 98);
+}
+
+.Tcards img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+    background-color: #161819;
+    object-position: center;
+}
+
+.Tcards .price {
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+}
+
+.price .new {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.price .old {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.Topmain .browse {
+    width: 100%;
+    border: 2px solid rgb(98, 94, 94);
+    position: relative;
+}
+
+.browse h2 {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    font-size: 45px;
+    color: rgb(192, 185, 185);
+}
+
+.browse .arrow {
+    font-size: 75px;
+}
+
+.Topcontainer .btn-filter{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 70px;
+}
+.btn-filter .filterClick button{
+    padding: 5px 15px;
+    border: none;
+    color: white;
+    border-radius: 3px;
+}
+.filterClick button:hover{
+    background-color: red;
+}
+.Topcontainer .Toptitle{
+    color: white;
+    text-align: center;
+    margin: 95px;
+    margin-top: 170px;
+}
+
+.btn-filter button.active {
+  background-color: red;
+  font-weight: 600;
+}
+.advantagesBox .AdTitle{
+    color: white;
+    text-align: center;
+    margin-top: 180px;
+    margin-bottom: 150px;
+}
+.advantagesBox .servicesWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.servicesWrapper .services{
+    display: flex;
+    margin-bottom: 100px;
+}
+.services .ico{
+    color: red;
+    font-size: 50px;
+    margin-right:20px;
+}
+.SerCont h2 {
+    font-size: 30px;
+    color: rgb(156, 150, 150);
+}
+.SerCont h3 {
+    font-size: 20px;
+}
