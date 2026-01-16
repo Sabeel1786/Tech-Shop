@@ -1,25 +1,31 @@
 nav {
-    background-color: black;
+    
     color: #A5ABBE;
     width: 100%;
 }
 
-
-.navcontainer {
+.navcontainer{
+    background-color: black;
+}
+.navcontainer{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .navcontainer .rightComp {
     display: flex;
     gap: 40px;
+    background-color: black;
 }
 
 .rightComp .icon {
     margin: 0px;
     cursor: pointer;
     font-size: 22px;
+    background-color: black;
+    
 }
 
 
@@ -31,9 +37,13 @@ nav {
     color: #ED1D24;
     cursor: pointer;
 }
-
+.leftComp{
+    background-color: black;
+    
+}
 .leftComp h1 {
     margin: 10px 20px;
+    background-color: black;
 }
 
 .iconWrapper {

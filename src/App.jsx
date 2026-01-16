@@ -6,6 +6,7 @@ import NavBar from "./Components/Navbar"
 import HeroSliders from './Components/HeroSliders'
 import FeaturedProducts from './Components/FeaturedProducts'
 import TopProducts from './Components/TopProducts'
+import Footer from './Components/Footer'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <HeroSliders/>
       <FeaturedProducts/>
       <TopProducts/>
+      <Footer/>
     </>
   )
 }
