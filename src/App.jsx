@@ -3,10 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import NavBar from "./Components/Navbar"
-import HeroSliders from './Components/HeroSliders'
-import FeaturedProducts from './Components/FeaturedProducts'
-import TopProducts from './Components/TopProducts'
-import Footer from './Components/Footer'
+
+import Routings from './Routing/Routings'
 
 
 function App() {
@@ -15,10 +13,7 @@ function App() {
   return (
     <>
       <NavBar/>
-      <HeroSliders/>
-      <FeaturedProducts/>
-      <TopProducts/>
-      <Footer/>
+      <Routings />
     </>
   )
 }

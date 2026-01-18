@@ -1,12 +1,12 @@
 import React from "react";
 import {footMenu,footSocial} from "../assets/data/footerData"
-import "./footer.css"
+import style from "./footer.module.css"
 
 const Footer = () => {
     const [menu] = footMenu
     return (
         <>
-            <div className="footerContainer">
+            <div className={style.footerContainer}>
                 <div className="leftCont">
                     <h1 className="Flogo">Tech Shop</h1>
                     <p>Subscribe to our alerts to receive early discount offers, and new products info.</p>
