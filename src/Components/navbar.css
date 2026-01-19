@@ -1,9 +1,9 @@
 nav {
-    position: fixed;
+    position: sticky; /* or fixed */
     top: 0;
-    color: #A5ABBE;
-    width: 100%;
+    z-index: 1000;   /* MUST be higher than slider */
 }
+
 
 .navcontainer {
     background-color: black;
@@ -14,7 +14,7 @@ nav {
     color: #A5ABBE;
 }
 
-.navcontainer .rightComp a {
+.navcontainer .rightComp a,.iconWrapper{
     color: #A5ABBE;
 }
 

@@ -9,20 +9,35 @@ const NavBar = () => {
     const [cartshow, setCartShow] = useState(false)
     const [personshow, setPersonShow] = useState(false)
 
+    // const hoverHandler = (param) => {
+    //     if (param === 'search') setSearchShow(true)
+    //     else if (param === "cart") setCartShow(true)
+    //     else setPersonShow(true)
+    // }
+
+    // const leaveHandler = (param) => {
+    //     if (param === "search") setSearchShow(false)
+    //     else if (param === "cart") setCartShow(false)
+    //     else setPersonShow(false)
+    // }
+
+    const [authType, setAuthType] = useState(null);
+    // null | "login" | "signup"
+
     const hoverHandler = (param) => {
+        if (authType) return; // ⛔ stop hover when popup open
+
         if (param === 'search') setSearchShow(true)
         else if (param === "cart") setCartShow(true)
         else setPersonShow(true)
     }
-
     const leaveHandler = (param) => {
+        if (authType) return;
+
         if (param === "search") setSearchShow(false)
         else if (param === "cart") setCartShow(false)
         else setPersonShow(false)
     }
-
-    const [authType, setAuthType] = useState(null);
-    // null | "login" | "signup"
 
 
     return (
