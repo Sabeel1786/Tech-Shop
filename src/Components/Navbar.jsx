@@ -21,6 +21,10 @@ const NavBar = () => {
         else setPersonShow(false)
     }
 
+    const [authType, setAuthType] = useState(null);
+    // null | "login" | "signup"
+
+
     return (
         <>
             <nav>
@@ -45,8 +49,11 @@ const NavBar = () => {
                                     <p>Hello!</p>
                                     <p>Access account and manage orders</p>
                                     <div className="login-signup">
-                                        <p className="Login">Login</p><span>/</span>
-                                        <p className="signup">Signup</p>
+                                        <p className="Login" onClick={() => setAuthType("login")}>Login</p>
+                                        <span>/</span>
+                                        <p className="signup" onClick={() => setAuthType("signup")}>Signup</p>
+
+
                                     </div>
                                     <hr></hr>
                                     <p>Please Login</p>
@@ -55,6 +62,67 @@ const NavBar = () => {
                         </div>
                     </div>
                 </div>
+                {authType === "login" && (
+                    <div className="authOverlay" onClick={() => setAuthType(null)}>
+                        <div className="authPopup dark" onClick={(e) => e.stopPropagation()}>
+
+                            <span className="closeIcon" onClick={() => setAuthType(null)}>×</span>
+
+                            <h2>Login</h2>
+                            <p className="subText">
+                                New to Tech-Shop ?{" "}
+                                <span onClick={() => setAuthType("signup")}>Create an account</span>
+                            </p>
+
+                            <input type="email" placeholder="Email" />
+                            <input type="password" placeholder="Password" />
+
+                            <button className="loginBtn">Login</button>
+
+                            <div className="divider">
+                                <span>or login with</span>
+                            </div>
+
+                            <div className="socialBtns">
+                                <button className="fb">Facebook</button>
+                                <button className="google">Google</button>
+                                <button className="twitter">Twitter</button>
+                            </div>
+
+                        </div>
+                    </div>
+                )}
+
+
+                {authType === "signup" && (
+                    <div className="authOverlay" onClick={() => setAuthType(null)}>
+                        <div className="authPopup dark" onClick={(e) => e.stopPropagation()}>
+
+                            <span className="closeIcon" onClick={() => setAuthType(null)}>×</span>
+
+                            <h2>Signup</h2>
+                            <p className="subText">
+                                Already have an account ?{" "}
+                                <span onClick={() => setAuthType("login")}>Login</span>
+                            </p>
+
+                            <input type="text" placeholder="Username" />
+                            <input type="email" placeholder="Email" />
+                            <input type="password" placeholder="Password" />
+                            <input type="password" placeholder="Confirm Password" />
+
+                            <button className="loginBtn">Signup</button>
+
+                            <div className="divider">
+                                <span>or login with</span>
+                            </div>
+
+
+                        </div>
+                    </div>
+                )}
+
+
             </nav>
 
         </>
