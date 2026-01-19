@@ -1,153 +1,164 @@
 .Tcards hr {
-    border: none;
-    height: 1px;
-    background: gainsboro;
+  border: none;
+  height: 1px;
+  background: gainsboro;
 }
+
 .Topcontainer {
-    background-color: #161819;
-    padding: 170px 0 95px; /* instead of margins */
+  background-color: #161819;
+  padding: 170px 0 95px;
+  /* instead of margins */
 }
 
 .Topmain {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    overflow-x: hidden;
-    gap: 20px;
-    background-color: #161819;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  overflow-x: hidden;
+  gap: 20px;
+  background-color: #161819;
 
 }
 
 .Tcards {
-    width: 100%;
-    border: 2px solid rgb(98, 94, 94);
-    border-radius: 2px;
+  width: 100%;
+  border: 2px solid rgb(98, 94, 94);
+  border-radius: 2px;
 }
 
 .Tcards .Tcont {
-    margin: 30px;
+  margin: 30px;
 }
 
 .Tcont .Rating {
-    margin: 20px 10px;
+  margin: 20px 10px;
 }
 
 .Tcont button {
-    margin-top: 15px;
-    width: 100%;
-    padding: 15px;
-    font-size: larger;
-    background-color: red;
+  margin-top: 15px;
+  width: 100%;
+  padding: 15px;
+  font-size: larger;
+  background-color: red;
 }
 
 .Tcont h1 {
-    color: rgb(186, 182, 182);
+  color: rgb(186, 182, 182);
 }
 
 .Tcont h3 {
-    color: rgb(101, 98, 98);
+  color: rgb(101, 98, 98);
 }
 
 .Tcards img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    display: block;
-    background-color: #161819;
-    object-position: center;
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  background-color: #161819;
+  object-position: center;
 }
 
 .Tcards .price {
-    display: flex;
-    align-items: center;
-    /* gap: 10px; */
+  display: flex;
+  align-items: center;
+  /* gap: 10px; */
 }
 
 .price .new {
-    font-size: 30px;
-    font-weight: 700;
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .price .old {
-    font-size: 22px;
-    font-weight: 700;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .Topmain .browse {
-    width: 100%;
-    border: 2px solid rgb(98, 94, 94);
-    position: relative;
+  width: 100%;
+  border: 2px solid rgb(98, 94, 94);
+  position: relative;
 }
 
 .browse h2 {
-    position: absolute;
-    top: 40%;
-    left: 20%;
-    font-size: 45px;
-    color: rgb(192, 185, 185);
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  font-size: 45px;
+  color: rgb(192, 185, 185);
 }
 
 .browse .arrow {
-    font-size: 75px;
+  font-size: 75px;
 }
 
-.Topcontainer .btn-filter{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 70px;
-    
+.Topcontainer .btn-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 70px;
+
 }
-.btn-filter .filterClick button{
-    padding: 5px 15px;
-    border: none;
-    color: white;
-    border-radius: 3px;
-    background-color: #161819;
+
+.btn-filter .filterClick button {
+  padding: 5px 15px;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  background-color: #161819;
 }
-.filterClick button:hover{
-    background-color: red;
+
+.filterClick button:hover {
+  background-color: red;
 }
-.Topcontainer .Toptitle{
-    color: white;
-    text-align: center;
-    margin: 0px;
+
+.Topcontainer .Toptitle {
+  color: white;
+  text-align: center;
+  margin: 0px;
 }
 
 .btn-filter button.active {
   background-color: red;
   font-weight: 600;
 }
+
 .advantagesBox {
-    background-color: #161819;
-    padding: 1px 0 15px;
+  background-color: #161819;
+  padding: 1px 0 15px;
 }
 
-.advantagesBox .AdTitle{
-    color: white;
-    text-align: center;
-    margin-top: 180px;
-    margin-bottom: 150px;
+.advantagesBox .AdTitle {
+  color: white;
+  text-align: center;
+  margin-top: 180px;
+  margin-bottom: 150px;
 }
-.advantagesBox .servicesWrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+
+.advantagesBox .servicesWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
-.servicesWrapper .services{
-    display: flex;
-    margin-bottom: 100px;
+
+.servicesWrapper .services {
+  display: flex;
+  margin-bottom: 100px;
 }
-.services .ico{
-    color: red;
-    font-size: 50px;
-    margin-right:20px;
+
+.services .ico {
+  color: red;
+  font-size: 50px;
+  margin-right: 20px;
 }
+
 .SerCont h2 {
-    font-size: 30px;
-    color: rgb(156, 150, 150);
+  font-size: 30px;
+  color: rgb(156, 150, 150);
 }
+
 .SerCont h3 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 
@@ -279,4 +290,12 @@
   .SerCont h3 {
     font-size: 16px;
   }
+}
+
+.Tcont button .successCart {
+  width: 100%;
+  padding: 0px;
+  font-size: larger;
+  background-color: green;
+  margin-bottom: 0px;
 }

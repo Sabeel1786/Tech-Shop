@@ -4,10 +4,14 @@ import servicesData from "../assets/data/servicesData";
 import { FaStar } from "react-icons/fa";
 import "./topProducts.css"
 import { GoArrowRight } from "react-icons/go";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Redux/CartSlice";
 
 const TopProducts = () => {
     const [topData, setTopdata] = useState([])
     const [active, setActive] = useState("All");
+    const dispatch = useDispatch()
+    const [cartBtn,setCartBtn]=useState(null);
 
 
     useEffect(() => {
@@ -25,6 +29,16 @@ const TopProducts = () => {
             setTopdata(productsData);
         }
     };
+
+    const CartHandler=(param)=>{
+        console.log(param);
+        setCartBtn(param.id)
+        dispatch(addToCart(param))  
+        
+        setTimeout(()=>{
+            setCartBtn(null)
+        },2000)
+    }
 
     return (
         <div>
@@ -67,7 +81,11 @@ const TopProducts = () => {
                                         <div className="new">₹{Tdata.finalPrice}</div>
                                         <div className="old">₹{Tdata.originalPrice}</div>
                                     </div>
-                                    <button className="btn btn-danger">Add to cart</button>
+                                    <button className="btn btn-danger" onClick={()=>CartHandler(Tdata)}>
+                                        {
+                                            cartBtn === Tdata.id ? <p className="successCart">Added</p>:"Add to Cart"
+                                        }
+                                        </button>
 
                                 </div>
 
