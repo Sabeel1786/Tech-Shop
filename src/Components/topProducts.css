@@ -3,12 +3,17 @@
     height: 1px;
     background: gainsboro;
 }
+.Topcontainer {
+    background-color: #161819;
+    padding: 170px 0 95px; /* instead of margins */
+}
 
 .Topmain {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     overflow-x: hidden;
     gap: 20px;
+    background-color: #161819;
 
 }
 
@@ -90,12 +95,14 @@
     align-items: center;
     justify-content: space-evenly;
     margin: 70px;
+    
 }
 .btn-filter .filterClick button{
     padding: 5px 15px;
     border: none;
     color: white;
     border-radius: 3px;
+    background-color: #161819;
 }
 .filterClick button:hover{
     background-color: red;
@@ -103,14 +110,18 @@
 .Topcontainer .Toptitle{
     color: white;
     text-align: center;
-    margin: 95px;
-    margin-top: 170px;
+    margin: 0px;
 }
 
 .btn-filter button.active {
   background-color: red;
   font-weight: 600;
 }
+.advantagesBox {
+    background-color: #161819;
+    padding: 1px 0 15px;
+}
+
 .advantagesBox .AdTitle{
     color: white;
     text-align: center;

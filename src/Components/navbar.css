@@ -1,17 +1,58 @@
 nav {
-    
+
     color: #A5ABBE;
     width: 100%;
 }
 
-.navcontainer{
+.navcontainer {
     background-color: black;
 }
-.navcontainer{
+
+.navcontainer .leftComp a {
+    text-decoration: none;
+    color: #A5ABBE;
+}
+
+.navcontainer .rightComp a {
+    color: #A5ABBE;
+}
+
+.navcontainer .iconWrapper .login-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    gap: 6px;
+
+}
+
+.login-signup p:hover {
+    color: red;
+
+}
+
+
+.login-signup,
+span,
+.loginbox,.loginInfo p{
+    background-color: #222222;
+}
+
+.loginbox {
+    width: 180px;
+    height: auto;
+}
+
+.login-signup span {
+    position: relative;
+    top: -5px;
+}
+
+.navcontainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
 }
 
 .navcontainer .rightComp {
@@ -25,7 +66,7 @@ nav {
     cursor: pointer;
     font-size: 22px;
     background-color: black;
-    
+
 }
 
 
@@ -37,10 +78,12 @@ nav {
     color: #ED1D24;
     cursor: pointer;
 }
-.leftComp{
+
+.leftComp {
     background-color: black;
-    
+
 }
+
 .leftComp h1 {
     margin: 10px 20px;
     background-color: black;
@@ -59,10 +102,23 @@ nav {
     align-items: center;
 }
 
-.rightComp .info{
+.rightComp .loginInfo {
     position: absolute;
     top: 35px;
-    left: -40px;
+    left: -200px;
+    background-color: #222222;
+    border: 2px solid white;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 15px;
+}
+
+.rightComp .info {
+    position: absolute;
+    top: 35px;
+    left: -80px;
     background-color: #222222;
     border: 2px solid white;
     color: white;

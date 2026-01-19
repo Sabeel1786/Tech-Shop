@@ -5,8 +5,8 @@
 }
 
 .slider {
-    background-color: #141414;
-    min-height: 100vh;
+    background-color:  #161819;
+    height: 120vh;
     overflow: hidden;
 }
 
@@ -19,7 +19,7 @@
     margin: 0px 10px;
     z-index: 10;
     color: #A5ABBE;
-    min-height: 100vh;
+    height: 110vh;
 }
 
 .backtext h1 {

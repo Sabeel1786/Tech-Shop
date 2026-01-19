@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import "./navbar.css"
+import { Link } from "react-router-dom";
 
 
 const NavBar = () => {
@@ -25,7 +26,7 @@ const NavBar = () => {
             <nav>
                 <div className="navcontainer">
                     <div className="leftComp">
-                        <h1>Tech-Shop</h1>
+                        <Link to="/"><h1>Tech-Shop</h1></Link>
                     </div>
                     <div className="rightComp">
                         <div className="iconWrapper" onMouseEnter={() => hoverHandler("search")} onMouseLeave={() => leaveHandler("search")}>
@@ -34,17 +35,28 @@ const NavBar = () => {
                         </div>
 
                         <div className="iconWrapper" onMouseEnter={() => hoverHandler("cart")} onMouseLeave={() => leaveHandler("cart")}>
-                            <FaShoppingCart className="icon" />
+                            <Link to="/cart"><FaShoppingCart className="icon" /></Link>
                             {cartshow && <span className="info">cart</span>}
                         </div>
-                        <div className="iconWrapper" onMouseEnter={() => hoverHandler("person")} onMouseLeave={() => leaveHandler("person")} >
+                        <div className="iconWrapper" onMouseEnter={() => hoverHandler("person")}  >
                             <FaUser className="icon" />
-                            {personshow && <span className="info">login/sign up</span>}
+                            {personshow && <div className="loginInfo" onMouseLeave={() => leaveHandler("person")}>
+                                <div className="loginbox">
+                                    <p>Hello!</p>
+                                    <p>Access account and manage orders</p>
+                                    <div className="login-signup">
+                                        <p className="Login">Login</p><span>/</span>
+                                        <p className="signup">Signup</p>
+                                    </div>
+                                    <hr></hr>
+                                    <p>Please Login</p>
+                                </div>
+                            </div>}
                         </div>
                     </div>
                 </div>
             </nav>
-            
+
         </>
     )
 }
