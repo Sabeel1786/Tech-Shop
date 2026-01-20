@@ -1,9 +1,13 @@
 import React from "react";
 import Footer from "../Components/Footer"
 import { useSelector } from "react-redux";
-import { increaseItems, removeItem, addToCart } from "../Redux/CartSlice"
+import { increaseItems, removeItem, addToCart, removeFromCart } from "../Redux/CartSlice"
 import { useDispatch } from "react-redux";
 import Cstyle from "../Components/Cart.module.css"
+import { FaTrash } from "react-icons/fa";
+
+
+
 
 const Cart = () => {
     const cart = useSelector((item) => {
@@ -21,6 +25,10 @@ const Cart = () => {
     const totalItems = cart.reduce((total, item) => {
         return total + item.quantity
     }, 0);
+
+    const RemoveFromcart = (props) => {
+        dispatch(removeFromCart(props))
+    }
     return (
         <>
             <div className={Cstyle.CartContainer}>
@@ -31,6 +39,7 @@ const Cart = () => {
                                 <img src={CartData.images[0]} alt={CartData.title} />
                                 <div className={Cstyle.CartText}>
                                     <div className="cartTitleCont"><p className="C-Cont">{CartData.title} {CartData.info}</p></div>
+                                    <div className="DeleteItem" onClick={() => RemoveFromcart(CartData)}><FaTrash /></div>
                                     <div className={Cstyle.price}>
                                         <div className={Cstyle.new}>₹{CartData.finalPrice}</div>
                                         <div className={Cstyle.old}>₹{CartData.originalPrice}</div>
