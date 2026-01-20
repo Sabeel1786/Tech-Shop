@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const HeroSliders = () => {
 
@@ -45,11 +46,11 @@ const HeroSliders = () => {
                                                     <div className="new"><p>₹{user.finalPrice}</p></div>
                                                     <div className="old"><p>₹{user.originalPrice}</p></div>
                                                 </div>
-                                                <button className="btn btn-danger">Shop Now</button>
+                                                <Link to="/productDetails"><button className="btn btn-danger">Shop Now</button></Link>
                                             </div>
 
                                             <div className="rightData">
-                                                <img src={user.heroImage} alt={user.title}  />
+                                                <img src={user.heroImage} alt={user.title} />
                                             </div>
                                         </div>
                                     </SwiperSlide>

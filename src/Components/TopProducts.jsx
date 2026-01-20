@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import productsData from "../assets/data/productsData";
-import servicesData from "../assets/data/servicesData";
 import { FaStar } from "react-icons/fa";
 import "./topProducts.css"
 import { GoArrowRight } from "react-icons/go";
@@ -101,27 +100,6 @@ const TopProducts = () => {
                 </div>
 
             </div>
-            <div className="advantagesBox">
-                <h1 className="AdTitle">Our Advantages</h1>
-
-                <div className="servicesWrapper">
-                    {servicesData.map((data) => {
-                        const Icon = data.icon;
-                        return (
-                            <div className="services" key={data.id}>
-                                <div className="ico">
-                                    <Icon />
-                                </div>
-                                <div className="SerCont">
-                                    <h2>{data.title}</h2>
-                                    <h3>{data.info}</h3>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
-
         </div>
     )
 }

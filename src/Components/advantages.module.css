@@ -1,0 +1,70 @@
+.advantagesBox {
+    background-color: #161819;
+    padding: 1px 0 15px;
+}
+
+.advantagesBox .AdTitle {
+    color: white;
+    text-align: center;
+    margin-top: 180px;
+    margin-bottom: 150px;
+}
+
+.advantagesBox .servicesWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.servicesWrapper .services {
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.services .ico {
+    color: red;
+    font-size: 50px;
+    margin-right: 20px;
+}
+
+.SerCont h2 {
+    font-size: 30px;
+    color: rgb(156, 150, 150);
+}
+
+.SerCont h3 {
+    font-size: 20px;
+}
+
+@media (max-width: 1024px) {
+    .advantagesBox .servicesWrapper {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .servicesWrapper .services {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .advantagesBox .AdTitle {
+        margin: 120px 20px 80px;
+    }
+
+    .advantagesBox .servicesWrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .servicesWrapper .services {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .services .ico {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
