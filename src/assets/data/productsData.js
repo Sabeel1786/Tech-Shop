@@ -139,9 +139,9 @@ const productsData = [
         heroImage: "/images/products/sonyXb910n-1.png",
         images: [
             "/images/products/sonyXb910n-1.png",
-            "/images/products/sonyxb910n-2.png",
-            "/images/products/sonyxb910n-3.png",
-            "/images/products/sonyxb910n-4.png",
+            "/images/products/sonyXb910n-2.png",
+            "/images/products/sonyXb910n-3.png",
+            "/images/products/sonyXb910n-4.png",
         ],
         brand: "Sony",
         title: "Sony WH-XB910N",

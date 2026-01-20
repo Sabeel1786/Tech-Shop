@@ -100,7 +100,8 @@
     color: white;
     margin-left: 110px;
 }
-.rightCart hr{
+
+.rightCart hr {
     height: 1px;
     color: white;
     width: 100%;
@@ -136,7 +137,8 @@
 /* Discount text */
 .discount {
     background-color: #0F0F0F;
-    color: #047603 ;/* green */
+    color: #047603;
+    /* green */
     font-weight: 500;
 }
 
@@ -182,13 +184,16 @@
 .rightCart button:hover {
     background: #c50500;
 }
-.rightCart .original{
+
+.rightCart .original {
     background-color: #0F0F0F;
 }
-.rightCart .totalPrice{
+
+.rightCart .totalPrice {
     font-size: 30px;
 }
-.totalPrice span{
+
+.totalPrice span {
     background-color: #0F0F0F;
 }
 
@@ -291,4 +296,47 @@
         font-size: 40px;
         text-align: center;
     }
+}
+
+/* EMPTY CART UI */
+.emptyCart {
+    height: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #141414;
+    border-radius: 10px;
+}
+
+/* Cart icon */
+.cartIcon {
+    font-size: 90px;
+    color: red;
+    margin-bottom: 20px;
+}
+
+/* Empty text */
+.emptyCart h2 {
+    color: #cbd5e1;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Start shopping button */
+.shopBtn {
+    background: #e10600;
+    color: white;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.shopBtn:hover {
+    background: #c50500;
 }

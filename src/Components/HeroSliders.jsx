@@ -7,10 +7,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HeroSliders = () => {
-
+    const navigation = useNavigate()
     const [slideData, setData] = useState([])
 
     useEffect(() => {
@@ -19,6 +19,9 @@ const HeroSliders = () => {
         setData(filteredData)
     }, [])
 
+    const handleProducts = (id) => {
+        navigation(`/products/${id}`)
+    }
 
     return (
         <>
@@ -46,7 +49,7 @@ const HeroSliders = () => {
                                                     <div className="new"><p>₹{user.finalPrice}</p></div>
                                                     <div className="old"><p>₹{user.originalPrice}</p></div>
                                                 </div>
-                                                <Link to="/productDetails"><button className="btn btn-danger">Shop Now</button></Link>
+                                                <button className="btn btn-danger" onClick={() => handleProducts(user.id)}>Shop Now</button>
                                             </div>
 
                                             <div className="rightData">

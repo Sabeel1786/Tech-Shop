@@ -1,0 +1,15 @@
+.DetailLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 15px;
+}
+
+.DetailedBox .DetailLeft img {
+    width: 150px;
+    height: 150px;   
+    border: 3px solid rgb(79, 77, 77);
+    object-fit: contain;
+    background-color: #141414;
+    border-radius: 7px;
+}

@@ -52,7 +52,11 @@ const Cart = () => {
                                 </div>
 
                             </div>
-                        )) : (<h1 className={Cstyle.showEmpty}>Cart Is empty😟</h1>)
+                        )) : (<div className={Cstyle.emptyCart}>
+                            <div className={Cstyle.cartIcon}>🛒</div>
+                            <h2>Your Cart is Empty</h2>
+                            <button className={Cstyle.shopBtn}>Start Shopping</button>
+                        </div>)
                     }
 
                 </div>
