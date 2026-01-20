@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import "./navbar.css"
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 const NavBar = () => {
@@ -25,7 +26,7 @@ const NavBar = () => {
     // null | "login" | "signup"
 
     const hoverHandler = (param) => {
-        if (authType) return; // ⛔ stop hover when popup open
+        if (authType) return; 
 
         if (param === 'search') setSearchShow(true)
         else if (param === "cart") setCartShow(true)
@@ -39,7 +40,13 @@ const NavBar = () => {
         else setPersonShow(false)
     }
 
+    const cart =useSelector((item)=>{
+        return item.cart
+    })
 
+    const TotalItems = cart.reduce((total,item)=>{
+        return total + item.quantity
+    },0)
     return (
         <>
             <nav>
@@ -56,6 +63,7 @@ const NavBar = () => {
                         <div className="iconWrapper" onMouseEnter={() => hoverHandler("cart")} onMouseLeave={() => leaveHandler("cart")}>
                             <Link to="/cart"><FaShoppingCart className="icon" /></Link>
                             {cartshow && <span className="info">cart</span>}
+                            <div className="cartIcon">{TotalItems}</div>
                         </div>
                         <div className="iconWrapper" onMouseEnter={() => hoverHandler("person")}  >
                             <FaUser className="icon" />

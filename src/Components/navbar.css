@@ -32,6 +32,17 @@ nav {
 
 }
 
+/* //cartIcon// */
+.navcontainer .rightComp .iconWrapper .cartIcon{
+    width: 23px;
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    top: -8px;
+}
+
 
 .login-signup,
 span,
