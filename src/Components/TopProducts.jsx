@@ -5,8 +5,10 @@ import "./topProducts.css"
 import { GoArrowRight } from "react-icons/go";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Redux/CartSlice";
+import { useNavigate } from "react-router-dom";
 
 const TopProducts = () => {
+    const navigation = useNavigate()
     const [topData, setTopdata] = useState([])
     const [active, setActive] = useState("All");
     const dispatch = useDispatch()
@@ -39,6 +41,9 @@ const TopProducts = () => {
         }, 2000)
     }
 
+    const handleProducts = (id) => {
+        navigation(`/products/${id}`)
+    }
     return (
         <div>
             <div className="Topcontainer">
@@ -63,8 +68,8 @@ const TopProducts = () => {
                     {
                         topData.length > 0 ? (topData.slice(0, 11).map((Tdata) => (
 
-                            <div className="Tcards" key={Tdata.id}>
-                                <img src={Tdata.images[0]} alt={Tdata.title} />
+                            <div className="Tcards" key={Tdata.id} >
+                                <img src={Tdata.images[0]} alt={Tdata.title} onClick={() => handleProducts(Tdata.id)} />
                                 <div className="Tcont">
                                     <div className="Rating">
                                         {
