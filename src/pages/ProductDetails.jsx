@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../Components/Footer";
 import Advantages from "../Components/Advantages";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import productsData from "../assets/data/productsData";
 import Dstyle from "../Components/productDetails.module.css"
 import { FaStar } from "react-icons/fa";
@@ -12,6 +12,7 @@ import reviewsData from "../assets/data/reviewsData";
 
 
 const ProductDetails = () => {
+    const navigation = useNavigate();
     const [activeImage, setActiveImage] = useState(null);
     const [pcartBtn, setPCartBtn] = useState(null);
     const dispatch = useDispatch()
@@ -39,7 +40,9 @@ const ProductDetails = () => {
             setPCartBtn(null)
         }, 1000)
     }
-
+     const handleProducts = (id) => {
+        navigation(`/products/${id}`)
+    }
 
     return (
         <>
@@ -211,7 +214,7 @@ const ProductDetails = () => {
                                 .map((items) => (
                                     <div className={Dstyle.relatedBox} key={items.id}>
                                         <div className={Dstyle.Realtedcards}>
-                                            <img src={items.images[0]} alt={items.title} />
+                                            <img src={items.images[0]} alt={items.title} onClick={() => handleProducts(items.id)}/>
 
                                             <div className={Dstyle.Rcont}>
                                                 <div className={Dstyle.Rating}>
