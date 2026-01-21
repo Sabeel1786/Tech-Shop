@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import featuredProd from "../assets/data/productsData";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, Pagination, EffectCoverflow } from 'swiper/modules'
+import {Navigation,Autoplay, Pagination, EffectCoverflow } from 'swiper/modules'
+import { useNavigate } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -9,7 +10,7 @@ import "swiper/css/navigation";
 import "./featured.css"
 
 const FeaturedProducts = () => {
-
+    const navigation = useNavigate()
     const [featuredData, setFeaturedData] = useState([])
 
     useEffect(() => {
@@ -17,6 +18,9 @@ const FeaturedProducts = () => {
         setFeaturedData(filtered)
 
     }, [])
+    const handleProducts = (id) => {
+        navigation(`/products/${id}`)
+    }
     return (
         <>
             <div className="main">
@@ -53,7 +57,7 @@ const FeaturedProducts = () => {
                                         < SwiperSlide key={i}>
                                             <div className="Fcards">
                                                 <h3>{user.title}</h3>
-                                                <img className="Fimage" src={user.images[0]} alt={user.title} />
+                                                <img className="Fimage" src={user.images[0]} alt={user.title} onClick={() => handleProducts(user.id)}/>
                                                 <div className="price">
                                                     <div className="new">₹{user.finalPrice}</div>
                                                     <div className="old">₹{user.originalPrice}</div>
