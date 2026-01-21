@@ -8,18 +8,23 @@ import { FaStar } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Redux/CartSlice";
+import reviewsData from "../assets/data/reviewsData";
 
 
 const ProductDetails = () => {
     const [activeImage, setActiveImage] = useState(null);
     const [pcartBtn, setPCartBtn] = useState(null);
     const dispatch = useDispatch()
+    const [prodInfo, setProdInfo] = useState("Specifications")
+
 
     const { id } = useParams();
 
     const product = productsData.find(
         (item) => item.id === Number(id)
     );
+    console.log(product);
+
 
     if (!product) {
         return <h1>Product Not Found 😴</h1>;
@@ -35,7 +40,6 @@ const ProductDetails = () => {
         }, 1000)
     }
 
-    console.log(product);
 
     return (
         <>
@@ -113,6 +117,138 @@ const ProductDetails = () => {
                     </div>
 
                 </div>
+                <div className={Dstyle.ReviewsPage}>
+                    <div className={Dstyle.revHeadings}>
+                        {["Specifications", "Overview", "Reviews"].map((item, i) => (
+                            <div
+                                key={i}
+                                className={`${Dstyle.Headings} ${prodInfo === item ? Dstyle.prodInfo : ""
+                                    }`}
+                                onClick={() => setProdInfo(item)}
+                            >
+                                <h4>{item}</h4>
+                            </div>
+                        ))}
+                    </div>
+                    <div className={Dstyle.SpecificationSection}>
+                        {
+                            prodInfo === "Specifications" && (
+                                <div className={Dstyle.specBox}>
+                                    <div className={Dstyle.specData1}>
+                                        <h3>Brand</h3>
+                                        <h3>Model</h3>
+                                        <h3>Generic Name</h3>
+                                        <h3>Headphone Type</h3>
+                                        <h3>Connectivity</h3>
+                                        <h3>Microphone</h3>
+                                    </div>
+                                    <div className={Dstyle.specData2}>
+                                        {
+
+                                            <div key={product.id}>
+                                                <h3>{product.brand}</h3>
+                                                <h3>{product.title}</h3>
+                                                <h3>{product.category}</h3>
+                                                <h3>{product.type}</h3>
+                                                <h3>{product.connectivity}</h3>
+                                                <h3>Yes</h3>
+                                            </div>
+
+                                        }
+                                    </div>
+                                </div>
+                            )}
+                        {prodInfo === "Overview" && (
+                            <div className={Dstyle.overviewBox}>
+                                {
+                                    <div key={product.id}>
+                                        <h3>The <span>{product.title}</span> {product.info} {product.tagline}</h3>
+                                        <ul>
+                                            <li>Sound Tuned to Perfection</li>
+                                            <li>Comfortable to wear</li>
+                                            <li>Long Hours Playback Time</li>
+                                        </ul>
+                                        <h4>But the <span>{product.title} {product.info} </span>which offers you with the fabulous music experience by providing you with awesome sound
+                                            quality that you can never move on from. Enjoy perfect felxible and
+                                            mobility with amazing musical quality with these Headphones
+                                            giving you truly awesome audio experience. It blends wiht exceptional
+                                            sound quality and a range of smart features for an unrivalled
+                                            listening experience.</h4>
+                                    </div>
+                                }
+                            </div>
+                        )}
+                        {prodInfo === "Reviews" && (
+                            <div className={Dstyle.RevBox}>
+                                {
+                                    reviewsData.map((users) => (
+                                        <div className={Dstyle.reviewBox} key={users.id}>
+                                            <h3>{users.name}</h3>
+                                            <div className={Dstyle.stars}>
+                                                {[...Array(users.rateCount)].map((_, i) => (
+                                                    <FaStar key={i} color="red" />
+                                                ))} | <p>{users.date}</p>
+                                            </div>
+                                            <p>{users.review}</p>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        )
+                        }
+                    </div>
+                </div>
+                <div className={Dstyle.realtedProductsBox}>
+                    <h1 className={Dstyle.relatedTitle}>Related Products</h1>
+                    <div className={Dstyle.realtedProducts}>
+                        {
+                            productsData
+                                .filter(
+                                    (items) =>
+                                        items.category === product.category &&
+                                        items.id !== product.id
+                                )
+                                .map((items) => (
+                                    <div className={Dstyle.relatedBox} key={items.id}>
+                                        <div className={Dstyle.Realtedcards}>
+                                            <img src={items.images[0]} alt={items.title} />
+
+                                            <div className={Dstyle.Rcont}>
+                                                <div className={Dstyle.Rating}>
+                                                    {[...Array(items.rateCount)].map((_, i) => (
+                                                        <FaStar key={i} color="red" />
+                                                    ))}
+                                                </div>
+
+                                                <h1>{items.title}</h1>
+                                                <h3>{items.info}</h3>
+
+                                                <hr />
+
+                                                <div className={Dstyle.price}>
+                                                    <div className={Dstyle.new}>₹{items.finalPrice}</div>
+                                                    <div className={Dstyle.old}>₹{items.originalPrice}</div>
+                                                </div>
+
+                                                <button
+                                                    className={Dstyle.btn}
+                                                    onClick={() => DCartHandler(items)}
+                                                >
+                                                    {pcartBtn === items.id ? (
+                                                        <p className={Dstyle.RsuccessCart}>Added</p>
+                                                    ) : (
+                                                        "Add to Cart"
+                                                    )}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                        }
+                    </div>
+
+                </div>
+
             </div>
 
             <Advantages />

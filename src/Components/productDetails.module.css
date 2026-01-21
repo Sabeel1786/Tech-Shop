@@ -5,6 +5,10 @@
     padding: 15px;
 }
 
+/* .DetailesContainer{
+    background-color: #141414;
+} */
+
 .DetailedBox .DetailLeft img {
     width: 150px;
     height: 150px;
@@ -77,69 +81,372 @@
     height: 28px;
     margin: 5px;
 }
-    .instock p {
+
+.instock p {
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 0px;
+
+    padding: 2px;
+}
+
+.offerpriceBox {
+    display: flex;
+    gap: 100px;
+}
+
+.offerDiscountBox .PayBox p {
+    width: 166px;
+    border: 1px solid rgb(66, 66, 66);
+    padding: 3px 3px;
+    background-color: #151819;
+    color: rgb(177, 175, 175);
+    border-radius: 3px;
+}
+
+.offerDiscountBox h2 {
+    color: rgb(177, 175, 175);
+}
+
+.offerDiscountBox .PayBox {
+    display: flex;
+    gap: 15px;
+}
+
+.Text button {
+    margin-top: 15px;
+    background-color: red;
+    border-radius: 3px;
+    color: white;
+    font-size: large;
+}
+
+.Text button:hover {
+    background-color: red;
+}
+
+.Text button .successCart {
+    font-size: large;
+    background-color: green;
+    margin-bottom: 0px;
+    border-radius: 3px;
+}
+
+.DetailedBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 170px;
+}
+
+.DetailesContainer {
+    background-color: #141414;
+}
+
+.DetailMiddle {
+    text-align: center;
+}
+
+.DetailMiddle img {
+    width: 590px;
+}
+
+.DetailRight .Title,
+.Info,
+.new {
+    color: rgb(164, 162, 162);
+}
+
+.ReviewsPage .revHeadings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 160px;
+}
+
+.Headings {
+    padding: 3px 15px;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.Headings:hover {
+    background-color: red;
+}
+
+.Headings.prodInfo {
+    background-color: red;
+}
+
+.SpecificationSection .specBox {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    color: rgb(165, 159, 159);
+    margin: 20px;
+    margin-bottom: 0px;
+}
+
+.specBox .specData1,
+.specData2,
+h3 {
+    padding: 15px;
+}
+
+.overviewBox {
+    margin: 25px;
+    margin-bottom: 0px;
+    color: rgb(104, 102, 102);
+}
+
+.overviewBox div h3 span {
+    color: red;
+    background-color: #141414;
+}
+
+.overviewBox h4 span {
+    background-color: #141414;
+    color: rgb(255, 255, 255);
+}
+
+.overviewBox h4 {
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.overviewBox ul li {
+    padding: 8px;
+}
+
+.RevBox .reviewBox {
+    text-align: center;
+    margin: 50px;
+    color: rgb(197, 190, 190);
+    margin-bottom: 0px;
+}
+
+.reviewBox h3 {
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+.reviewBox p {
+    margin-bottom: 0px;
+}
+
+.reviewBox .stars p {
+    margin-bottom: 0px;
+}
+
+.reviewBox .stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.realtedProductsBox {
+    background-color: #141414;
+    padding: 40px 20px 60px;
+}
+
+.relatedTitle {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(211, 208, 208);
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+.realtedProducts {
+    background-color: #141414;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.relatedBox {
+    background-color: #141414;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgb(202, 198, 198);
+}
+
+.relatedBox:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.Realtedcards {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.Realtedcards img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: #0f0f0f;
+    padding: 15px;
+}
+
+.Rcont {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.Rating {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.Rcont h1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.Rcont h3 {
+    font-size: 13px;
+    font-weight: 400;
+    color: #bbbbbb;
+}
+
+.Rcont hr {
+    border: none;
+    height: 1px;
+    background-color: #2a2a2a;
+    margin: 8px 0;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price .new {
+    color: rgb(192, 187, 187);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.price .old {
+    color: #888;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+.Rcont button {
+    margin-top: 15px;
+    background-color: red;
+    border-radius: 4px;
+    color: white;
+    font-size: large;
+}
+
+.Rcont button:hover {
+    background-color: red;
+}
+
+.Rcont button .RsuccessCart {
+    font-size: large;
+    background-color: green;
+    margin-bottom: 0px;
+    border-radius: 3px;
+}
+
+
+@media (max-width: 992px) {
+
+    /* Main product layout */
+    .DetailedBox {
+        flex-direction: column;
         align-items: center;
+        gap: 30px;
+        margin-bottom: 80px;
+    }
+
+    /* Left thumbnails */
+    .DetailLeft {
+        flex-direction: row;
+        gap: 20px;
         justify-content: center;
-        color: white;
-        margin-bottom: 0px;
-        
-        padding: 2px;
+    }
+
+    .DetailedBox .DetailLeft img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Main product image */
+    .DetailMiddle img {
+        width: 80%;
+    }
+
+    /* Right text section */
+    .DetailRight {
+        width: 100%;
+        text-align: center;
+    }
+
+    .DetailRight .Text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .offerpriceBox {
-        display: flex;
-        gap: 100px;
-    }
-
-    .offerDiscountBox .PayBox p {
-        width: 166px;
-        border: 1px solid rgb(66, 66, 66);
-        padding: 3px 3px;
-        background-color: #151819;
-        color: rgb(177, 175, 175);
-        border-radius: 3px;
-    }
-
-    .offerDiscountBox h2 {
-        color: rgb(177, 175, 175);
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
     }
 
     .offerDiscountBox .PayBox {
-        display: flex;
-        gap: 15px;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .Text button {
-        margin-top: 15px;
-        background-color: red;
-        border-radius: 3px;
-        color: white;
-        font-size: large;
+    /* Specifications */
+    .SpecificationSection .specBox {
+        gap: 60px;
     }
 
-    .Text button:hover {
-        background-color: red;
+    /* Related products */
+    .realtedProducts {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
+}
 
-    .Text button .successCart {
-        font-size: large;
-        background-color: green;
-        margin-bottom: 0px;
-        border-radius: 3px;
+@media (max-width: 576px) {
+
+    body {
+        margin: 0;
+        padding: 0;
     }
 
     .DetailedBox {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        width: 100%;
+        padding: 0 10px;
     }
 
-    .DetailesContainer {
-        background-color: #141414;
+    .DetailMiddle img {
+        width: 100%;
+        max-width: 100%;
     }
-    .DetailMiddle {
-        text-align: center;
+
+    .DetailLeft {
+        justify-content: center;
     }
-    .DetailMiddle img{
-        width: 590px;
-    }
+}
