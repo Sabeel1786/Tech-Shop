@@ -5,7 +5,7 @@
     padding: 15px;
 }
 
-.DetailedBox .DetailLeft img{
+.DetailedBox .DetailLeft img {
     width: 150px;
     height: 150px;
     border: 3px solid rgb(79, 77, 77);
@@ -14,10 +14,132 @@
     border-radius: 7px;
 }
 
-.DetailLeft img:hover{
+.DetailLeft img:hover {
     border: 4px solid rgb(143, 7, 7);
 }
 
-.DetailMiddle img{
+.DetailMiddle img {
     width: 50%;
 }
+
+.DetailRight .Text .Rating {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 0px;
+}
+
+.Rating div {
+    position: relative;
+    top: -3px;
+}
+
+.DetailRight .Text .Title {
+    font-size: 30px;
+    font-weight: 780;
+    margin-bottom: 0px;
+}
+
+.Text .Info {
+    margin-bottom: 15px;
+}
+
+.DetailRight .Value .prices .priceFlex {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.priceFlex .new {
+    font-size: 27px;
+    font-weight: 790;
+}
+
+.priceFlex .old {
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: line-through;
+}
+
+.offerFlex p {
+    margin-bottom: 0px;
+    color: rgb(66, 66, 66);
+}
+
+.offerFlex .SavedPrice {
+    color: rgb(1, 87, 1);
+    font-weight: 400;
+}
+
+.offerpriceBox .instock {
+    border: 1px solid black;
+    background-color: green;
+    width: 125px;
+    height: 28px;
+    margin: 5px;
+}
+    .instock p {
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-bottom: 0px;
+        
+        padding: 2px;
+    }
+
+    .offerpriceBox {
+        display: flex;
+        gap: 100px;
+    }
+
+    .offerDiscountBox .PayBox p {
+        width: 166px;
+        border: 1px solid rgb(66, 66, 66);
+        padding: 3px 3px;
+        background-color: #151819;
+        color: rgb(177, 175, 175);
+        border-radius: 3px;
+    }
+
+    .offerDiscountBox h2 {
+        color: rgb(177, 175, 175);
+    }
+
+    .offerDiscountBox .PayBox {
+        display: flex;
+        gap: 15px;
+    }
+
+    .Text button {
+        margin-top: 15px;
+        background-color: red;
+        border-radius: 3px;
+        color: white;
+        font-size: large;
+    }
+
+    .Text button:hover {
+        background-color: red;
+    }
+
+    .Text button .successCart {
+        font-size: large;
+        background-color: green;
+        margin-bottom: 0px;
+        border-radius: 3px;
+    }
+
+    .DetailedBox {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .DetailesContainer {
+        background-color: #141414;
+    }
+    .DetailMiddle {
+        text-align: center;
+    }
+    .DetailMiddle img{
+        width: 590px;
+    }

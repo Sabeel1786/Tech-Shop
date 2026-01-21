@@ -10,7 +10,7 @@ const TopProducts = () => {
     const [topData, setTopdata] = useState([])
     const [active, setActive] = useState("All");
     const dispatch = useDispatch()
-    const [cartBtn,setCartBtn]=useState(null);
+    const [cartBtn, setCartBtn] = useState(null);
 
 
     useEffect(() => {
@@ -29,14 +29,14 @@ const TopProducts = () => {
         }
     };
 
-    const CartHandler=(param)=>{
+    const CartHandler = (param) => {
         console.log(param);
         setCartBtn(param.id)
-        dispatch(addToCart(param))  
-        
-        setTimeout(()=>{
+        dispatch(addToCart(param))
+
+        setTimeout(() => {
             setCartBtn(null)
-        },2000)
+        }, 2000)
     }
 
     return (
@@ -80,11 +80,11 @@ const TopProducts = () => {
                                         <div className="new">₹{Tdata.finalPrice}</div>
                                         <div className="old">₹{Tdata.originalPrice}</div>
                                     </div>
-                                    <button className="btn btn-danger" onClick={()=>CartHandler(Tdata)}>
+                                    <button className="btn btn-danger" onClick={() => CartHandler(Tdata)}>
                                         {
-                                            cartBtn === Tdata.id ? <p className="successCart">Added</p>:"Add to Cart"
+                                            cartBtn === Tdata.id ? <p className="successCart">Added</p> : "Add to Cart"
                                         }
-                                        </button>
+                                    </button>
 
                                 </div>
 
