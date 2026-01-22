@@ -17,6 +17,13 @@ const Footer = () => {
         alert("Subscribed successfully!");
     };
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
+
     return (
         <>
             <div className={style.footerContainer}>
@@ -71,7 +78,7 @@ const Footer = () => {
                                 )
                             })
                         }
-                        <div className={style.scrollTopBtn}>
+                        <div className={style.scrollTopBtn} onClick={scrollToTop}>
                             <FaChevronUp />
                         </div>
 
