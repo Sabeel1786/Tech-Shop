@@ -1,10 +1,11 @@
-import React from "react";
+import React  from "react";
 import Footer from "../Components/Footer"
 import { useSelector } from "react-redux";
 import { increaseItems, removeItem, addToCart, removeFromCart } from "../Redux/CartSlice"
 import { useDispatch } from "react-redux";
 import Cstyle from "../Components/Cart.module.css"
 import { FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 
@@ -55,7 +56,9 @@ const Cart = () => {
                         )) : (<div className={Cstyle.emptyCart}>
                             <div className={Cstyle.cartIcon}>🛒</div>
                             <h2>Your Cart is Empty</h2>
-                            <button className={Cstyle.shopBtn}>Start Shopping</button>
+                            <Link to="/allproducts">
+                                <button className={Cstyle.shopBtn}>Start Shopping</button>
+                            </Link>
                         </div>)
                     }
 
