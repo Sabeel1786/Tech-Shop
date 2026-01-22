@@ -75,7 +75,8 @@
 }
 
 .Topmain .browse {
-  width: 100%;
+  width: auto;
+  height: 700px;
   border: 2px solid rgb(98, 94, 94);
   position: relative;
 }

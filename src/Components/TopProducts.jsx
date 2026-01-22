@@ -6,6 +6,8 @@ import { GoArrowRight } from "react-icons/go";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Redux/CartSlice";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const TopProducts = () => {
     const navigation = useNavigate()
@@ -97,10 +99,12 @@ const TopProducts = () => {
 
                         ))
 
-                        ).concat(<div className="browse" key="browse">
-                            <h2>Browse All Products
-                                <GoArrowRight className="arrow" /></h2>
-                        </div>) : (<h1>Loading...</h1>)
+                        ).concat(<Link to="/allproducts" key="browse">
+                            <div className="browse" >
+                                <h2>Browse All Products
+                                    <GoArrowRight className="arrow" /></h2>
+                            </div>
+                        </Link>) : (<h1>Loading...</h1>)
                     }
                 </div>
 
