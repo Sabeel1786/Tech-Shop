@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../Components/Footer";
 import Advantages from "../Components/Advantages";
 import { useNavigate, useParams } from "react-router-dom";
@@ -40,9 +40,16 @@ const ProductDetails = () => {
             setPCartBtn(null)
         }, 1000)
     }
-     const handleProducts = (id) => {
+    const handleProducts = (id) => {
         navigation(`/products/${id}`)
     }
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }, [id]);
+
 
     return (
         <>
@@ -214,7 +221,7 @@ const ProductDetails = () => {
                                 .map((items) => (
                                     <div className={Dstyle.relatedBox} key={items.id}>
                                         <div className={Dstyle.Realtedcards}>
-                                            <img src={items.images[0]} alt={items.title} onClick={() => handleProducts(items.id)}/>
+                                            <img src={items.images[0]} alt={items.title} onClick={() => handleProducts(items.id)} />
 
                                             <div className={Dstyle.Rcont}>
                                                 <div className={Dstyle.Rating}>
