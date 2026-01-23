@@ -1,7 +1,9 @@
 nav {
-    position: sticky; /* or fixed */
+    position: sticky;
+    /* or fixed */
     top: 0;
-    z-index: 1000;   /* MUST be higher than slider */
+    z-index: 1000;
+    /* MUST be higher than slider */
 }
 
 
@@ -14,7 +16,8 @@ nav {
     color: #A5ABBE;
 }
 
-.navcontainer .rightComp a,.iconWrapper{
+.navcontainer .rightComp a,
+.iconWrapper {
     color: #A5ABBE;
 }
 
@@ -33,7 +36,7 @@ nav {
 }
 
 /* //cartIcon// */
-.navcontainer .rightComp .iconWrapper .cartIcon{
+.navcontainer .rightComp .iconWrapper .cartIcon {
     width: 23px;
     background-color: red;
     color: white;
@@ -359,4 +362,61 @@ span,
         padding: 4px 10px;
         white-space: nowrap;
     }
+}
+
+.searchOverlay {
+    position: fixed;
+    top: -93px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.searchPopup {
+    background-color: #111;
+    /* solid black */
+    padding: 30px 40px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    color: #ccc;
+    /* light gray text */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input styling */
+.searchPopup input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: #222;
+    color: #eee;
+}
+
+/* Search results */
+.searchResults {
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #222;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.searchResults p {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.searchResults p:hover {
+    background-color: #333;
 }
