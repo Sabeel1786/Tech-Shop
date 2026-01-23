@@ -245,3 +245,125 @@
 .clearFiltersBtn:hover {
     background-color: #c40000;
 }
+
+
+@media (max-width: 600px) {
+
+    .allProductsSection {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .leftAllProd {
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+        padding: 10px;
+    }
+
+    .clearFiltersBtn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .sortby,
+    .filterby {
+        margin-bottom: 15px;
+    }
+
+    .filterBox {
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .priceBox {
+        padding: 10px 0;
+    }
+
+    .rightAllProd {
+        width: 100%;
+    }
+
+    .Allcards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .Tcards img {
+        height: 180px;
+    }
+
+    .Tcont {
+        margin: 15px;
+    }
+
+    .Tcont h1 {
+        font-size: 18px;
+    }
+
+    .Tcont h3 {
+        font-size: 14px;
+    }
+
+    .price .new {
+        font-size: 22px;
+    }
+
+    .price .old {
+        font-size: 16px;
+    }
+
+    .Tcont button {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .allProductsSection {
+        gap: 20px;
+    }
+
+    .leftAllProd {
+        width: 320px;
+        height: auto;
+        overflow-y: auto;
+        padding-left: 15px;
+    }
+
+    .rightAllProd {
+        width: calc(100% - 320px);
+    }
+
+    .Allcards {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .Tcards img {
+        height: 200px;
+    }
+
+    .Tcont h1 {
+        font-size: 20px;
+    }
+
+    .Tcont h3 {
+        font-size: 15px;
+    }
+
+    .price .new {
+        font-size: 26px;
+    }
+
+    .price .old {
+        font-size: 18px;
+    }
+
+    .Tcont button {
+        font-size: 16px;
+        padding: 14px;
+    }
+}
